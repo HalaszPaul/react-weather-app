@@ -1,5 +1,5 @@
 import React from 'react';
-import {useState} from "react";
+import {useState} from 'react';
 import './App.css';
 
 const api = {
@@ -45,7 +45,7 @@ export default function App() {
 						placeholder="Search..."
 						onChange={e => setQuery(e.target.value)}
 						value={query}
-						onKeyPress={search}
+						onKeyDown={search}
 					/>
 				</div>
 				{(typeof weather.main !== "undefined") ? (
