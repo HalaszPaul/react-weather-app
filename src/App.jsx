@@ -22,6 +22,11 @@ export default function App() {
 			});
 		}
 	}
+	const handleKeyDown = (evt) => {
+		if (evt.key === "Enter") {
+			search(evt);
+		}
+	};
 
 	const dateBuilder = (d) => {
 		let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -45,7 +50,7 @@ export default function App() {
 						placeholder="Search..."
 						onChange={e => setQuery(e.target.value)}
 						value={query}
-						onKeyDown={search}
+						onKeyDown={handleKeyDown}
 					/>
 				</div>
 				{(typeof weather.main !== "undefined") ? (
@@ -63,6 +68,6 @@ export default function App() {
 					</div>
 				) : ("")}
 			</main>
-		</div>
-	);
+		</div>  
+    );
 };
